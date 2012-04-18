@@ -53,6 +53,19 @@ public class ChoiceController implements ActionListener {
 	}
 	
 	/**
+	 * This method creates a new ChoiceController.
+	 * It is only used for testing.
+	 * @param event DecisionLinesEvent The event associated with this controller
+	 * @param gui DecisionLinesGUI The Gui associated with this controller
+	 * @param text JTextField The text field associated with this controller
+	 */
+	public ChoiceController(DecisionLinesEvent event, DecisionLinesGUI gui, JTextField text){
+		this.event = event;
+		this.gui = gui;
+		this.text = text;
+	}
+	
+	/**
 	 * This method creates a ChoiceController.
 	 * @param event DecisionLinesEvent The DecisionLinesEvent the controller will update
 	 * @param gui DecisionLinesGUI The Gui which contains text fields this controller can be associated with

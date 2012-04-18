@@ -2,10 +2,15 @@ package ncochran.model;
 
 import junit.framework.TestCase;
 
+/**
+ * This class is used to test the Edge entity.
+ * @author Nigel Cochran
+ *
+ */
 public class TestEdge extends TestCase{
 
 	/**
-	 * constructor
+	 * This method test the constructor which only uses a height.
 	 */
 	public void testEdgeConstructor(){
 		Edge test = new Edge(50);
@@ -13,7 +18,7 @@ public class TestEdge extends TestCase{
 	}
 	
 	/**
-	 * other constructor
+	 * This method tests the constructor which takes in a height and lines.
 	 */
 	public void testEdgeConstructorLarge(){
 		Line line1 = new Line(25);
@@ -25,7 +30,7 @@ public class TestEdge extends TestCase{
 	}
 	
 	/**
-	 * test get heigh
+	 * This method test the getter for height.
 	 */
 	public void testGetHeight(){
 		Edge test = new Edge(57);
@@ -33,7 +38,7 @@ public class TestEdge extends TestCase{
 	}
 	
 	/**
-	 * test set height
+	 * This method tests the setter for height.
 	 */
 	public void testSetHeight(){
 		Edge test = new Edge(44);
@@ -42,7 +47,7 @@ public class TestEdge extends TestCase{
 	}
 	
 	/**
-	 * test get line
+	 * This method tests the getter for a line.
 	 */
 	public void testGetLine(){
 		Line line1 = new Line(25);
@@ -53,7 +58,7 @@ public class TestEdge extends TestCase{
 	}
 	
 	/**
-	 * test set line
+	 * This method tests the setter for a line.
 	 */
 	public void testSetLine(){
 		Line line1 = new Line(25);
@@ -67,7 +72,9 @@ public class TestEdge extends TestCase{
 		assertEquals(line22, test.getRightLine());
 	}
 	
-	//test getting the other line
+	/**
+	 * This method test the getter for the other line of the edge when given an edge.
+	 */
 	public void testGetOtherLine(){
 		Line line1 = new Line(25);
 		Line line2 = new Line(12);
@@ -76,7 +83,9 @@ public class TestEdge extends TestCase{
 		assertEquals(line1, edge.getOtherLine(line2));
 	}
 	
-	//test compare two Edges
+	/**
+	 * This method tests the comparison of two edges.
+	 */
 	public void testCompareTo(){
 		Edge edge1 = new Edge(10);
 		Edge edge2 = new Edge(5);
