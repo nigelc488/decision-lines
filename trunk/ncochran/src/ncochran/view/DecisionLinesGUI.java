@@ -49,9 +49,9 @@ public class DecisionLinesGUI extends JFrame {
 	//the choices and lines panels share a width but have different heights
 	static final int WIDTH = TOTAL_WIDTH - 150;
 	static final int LINESHEIGHT = 350;
-	//the heigth of the choices panel
+	//the height of the choice panel
 	static final int CHOICESHEIGHT = 50;
-	//the height of an individual text field
+	//the width of each individual choice text field
 	static final int CWIDTH = 75;
 	
 	
@@ -204,6 +204,15 @@ public class DecisionLinesGUI extends JFrame {
 	 */
 	public JTextField[] getChoices() {
 		return choices;
+	}
+	
+	/**
+	 * This method returns the text field at the specified location.
+	 * @param index int The desired location
+	 * @return JTextField The choice text field at the desired location
+	 */
+	public JTextField getChoice(int index){
+		return choices[index];
 	}
 
 	/**

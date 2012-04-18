@@ -22,7 +22,7 @@ public class Main {
 		DecisionLinesEvent event = new DecisionLinesEvent();
 
 		//gets values from console
-		new ConsoleController().readConsole(event);
+		new ConsoleController(event).readConsole();
 		
 		//creates a new gui and waits for user
 		DecisionLinesGUI gui = new DecisionLinesGUI (event);
