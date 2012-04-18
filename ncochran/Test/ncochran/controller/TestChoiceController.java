@@ -67,7 +67,9 @@ public class TestChoiceController extends TestCase {
 	 * This method is used to test retrieving the text from a text field and setting it to a line.
 	 */
 	public void testRunChoiceController(){
-		controller = new ChoiceController(event, new Line(36), new JTextField("test"));
+		controller = new ChoiceController(event, gui, new JTextField("test"));
+		event.addLine(new Line(36));
+		controller.line = new Line(36);
 		controller.runChoiceController();
 		assertEquals("test", controller.choice);
 	}
@@ -77,7 +79,9 @@ public class TestChoiceController extends TestCase {
 	 */
 	public void testNotRunChoiceController(){
 		event.addLine(new Line("test"));
-		controller = new ChoiceController(event, new Line(36), new JTextField("test"));
+		controller = new ChoiceController(event, gui, new JTextField("test"));
+		event.addLine(new Line(36));
+		controller.line = new Line(36);
 		controller.runChoiceController();
 		assertEquals(null, controller.line.getChoice());
 	}

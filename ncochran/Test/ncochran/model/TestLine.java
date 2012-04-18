@@ -2,10 +2,15 @@ package ncochran.model;
 
 import junit.framework.TestCase;
 
+/**
+ * This class is used to test the Line entity.
+ * @author Nigel Cochran
+ *
+ */
 public class TestLine extends TestCase {
 	
 	/**
-	 * check if storing correct
+	 * This method tests the constructor and storage of the horizontal position.
 	 */
 	public void testStorage(){
 		Line test = new Line(50);
@@ -13,7 +18,7 @@ public class TestLine extends TestCase {
 	}
 	
 	/**
-	 * test getter for position
+	 * This method tests the getter for position.
 	 */
 	public void testGetX(){
 		Line test = new Line(2);
@@ -21,7 +26,7 @@ public class TestLine extends TestCase {
 	}
 	
 	/**
-	 * test setter for position
+	 * This method tests the setter for position.
 	 */
 	public void testSetX(){
 		Line test = new Line(6);
@@ -29,7 +34,7 @@ public class TestLine extends TestCase {
 		assertEquals(44, test.xPosition);
 	}
 	/**
-	 * test setter for choice
+	 * This method tests the setter for choice.
 	 */
 	public void testSetChoice(){
 		Line test = new Line(45);
@@ -37,7 +42,7 @@ public class TestLine extends TestCase {
 		assertEquals("test", test.choice);
 	}
 	/**
-	 * test getter for choice
+	 * This method tests the getter for choice.
 	 */
 	public void testGetChoice(){
 		Line test = new Line(45);
@@ -45,7 +50,7 @@ public class TestLine extends TestCase {
 		assertEquals("test", test.getChoice());
 	}
 	/**
-	 * test if Case matching
+	 * This method tests the case of the choice.
 	 */
 	public void testCase(){
 		Line test = new Line(45);
@@ -53,7 +58,7 @@ public class TestLine extends TestCase {
 		assertEquals("TeSt", test.getChoice());
 	}
 	/**
-	 * test adding an edge
+	 * This method tests adding a new edge.
 	 */
 	public void testAddEdge(){
 			Line test = new Line(45);
@@ -62,7 +67,7 @@ public class TestLine extends TestCase {
 	}
 	
 	/**
-	 * test getting edges
+	 * This method tests the getter for edges.
 	 */
 	public void testGetEdges(){
 		Line test = new Line(666);
@@ -73,13 +78,17 @@ public class TestLine extends TestCase {
 		assertEquals(34, test.getEdge(1).getHeight());
 	}
 	
-	//test construct with string
+	/**
+	 * This method tests the constructor using a string.
+	 */
 	public void testConstructString(){
 		Line line = new Line("test");
 		assertEquals("test", line.getChoice());
 	}
 	
-	//test if requested edge is too close
+	/**
+	 * This method tests the adding of an edge too close to an existing edge.
+	 */
 	public void testCloseEdge(){
 		Line line = new Line(45);
 		line.addEdge(new Edge(12));
@@ -89,7 +98,9 @@ public class TestLine extends TestCase {
 		assertTrue(line.checkCloseEdge(12-7));
 	}
 	
-	//test comparing two lines
+	/**
+	 * This method tests comparing two lines.
+	 */
 	public void testCompareTo(){
 		Line line1 = new Line(10);
 		Line line2 = new Line(5);

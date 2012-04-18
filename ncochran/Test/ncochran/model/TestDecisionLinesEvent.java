@@ -168,11 +168,4 @@ public class TestDecisionLinesEvent extends TestCase {
 		event.addEdge(edge);
 		assertEquals(edge,event.getEdge(0));
 	}
-	
-/*	//THIS IS THE HARD ONE
-	public void testCalculateResults(){
-		
-	}*/
-	
-	
 }
