@@ -106,6 +106,9 @@ public class DecisionLinesEvent {
 	 */
 	public void sortLines(){
 		Collections.sort(lines);
+		for (int i = 0; i < lines.size(); i++) {
+			lines.get(i).setIndex(i);
+		}
 	}
 	
 	/**
@@ -122,6 +125,7 @@ public class DecisionLinesEvent {
 		//make sure the edges of the lines are sorted
 		for (int i = 0; i < lines.size(); i++) {
 			lines.get(i).sortEdges();
+			results.add("empty");
 			//System.out.println("Line: " + i +" " + lines.get(i).getChoice());
 			//lines.get(i).printEdges();
 		}
@@ -152,22 +156,21 @@ public class DecisionLinesEvent {
 					}
 				}
 				//if it reaches this then it is at the bottom
-				
 				//check if there are no edges
 				if(line.getEdges().size() == 0){
-					results.add(i, line.getChoice());
+					results.set(line.getIndex(), lines.get(i).getChoice());
 					//System.out.println("Result Added " + lines.get(i).getChoice());
 					run = false;
 				}
 				
 				else if(line.getEdge(line.getEdges().size() - 1).getHeight() <= currentHeight){
-					results.add(i, line.getChoice());
+					results.set(line.getIndex(), lines.get(i).getChoice());
 					//System.out.println("Result Added " + lines.get(i).getChoice());
 					run = false;
 				}
 			}
 		}
-		System.out.println("The Final Results are: " + results);
+		//System.out.println("The Final Results are: " + results);
 		
 	}
 
@@ -224,7 +227,7 @@ public class DecisionLinesEvent {
 
 	/**
 	 * This method returns the current number of edges.
-	 * @return in Current number of edges added to the event
+	 * @return int Current number of edges added to the event
 	 */
 	public int getCurrentEdges() {
 		return currentEdges;
@@ -296,4 +299,17 @@ public class DecisionLinesEvent {
 	public ArrayList<Edge> getEdges(){
 		return edges;
 	}
+
+	/**
+	 * This method returns the list of the results as a single string;
+	 * @return String The ordered results.
+	 */
+	public String getResults() {
+		String theResults = new String("The Ordered Results are: ");
+		for (int i = 0; i < results.size(); i++) {
+			theResults += (i+1) + ". " + results.get(i) + " ";
+		}
+		return theResults;
+	}
+	
 }

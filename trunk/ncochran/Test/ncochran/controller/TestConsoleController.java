@@ -3,8 +3,16 @@ package ncochran.controller;
 import junit.framework.TestCase;
 import ncochran.model.DecisionLinesEvent;
 
+/**
+ * This class is used to test the ConsoleController.
+ * @author Nigel Cochran
+ *
+ */
 public class TestConsoleController extends TestCase{
 	
+	/**
+	 * This method is used to test that only valid choices are accepted.
+	 */
 	public void testReadChoices(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		ConsoleController controller = new ConsoleController(event);
@@ -19,6 +27,9 @@ public class TestConsoleController extends TestCase{
 		assertEquals(5, event.getNumChoices());
 	}
 	
+	/**
+	 * This method is used to test that only valid rounds are accepted.
+	 */
 	public void testReadRounds(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		ConsoleController controller = new ConsoleController(event);

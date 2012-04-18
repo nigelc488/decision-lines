@@ -6,6 +6,11 @@ import junit.framework.TestCase;
 import ncochran.model.DecisionLinesEvent;
 import ncochran.view.DecisionLinesGUI;
 
+/**
+ * This Class is used to test the AddEdgeController class.
+ * @author Nigel Cochran
+ *
+ */
 public class TestAddEdgeController extends TestCase {
 	
 	DecisionLinesEvent event;
@@ -24,11 +29,17 @@ public class TestAddEdgeController extends TestCase {
 		gui = new DecisionLinesGUI(event);
 	}
 	
+	/**
+	 * This method is used to test the constructor.
+	 */
 	public void testAddEdgeController(){
 		AddEdgeController controller = new AddEdgeController(event);
 		assertEquals(3, controller.event.getNumChoices());
 	}
 	
+	/**
+	 * This method is used to test that only valid edges can be added.
+	 */
 	public void testRunEdgeController(){
 		AddEdgeController controller = new AddEdgeController(event, gui);
 		
@@ -53,6 +64,9 @@ public class TestAddEdgeController extends TestCase {
 		assertFalse(controller.validEdge);
 	}
 	
+	/**
+	 * This method is used to test the situation where the edge added is the last required edge.
+	 */
 	public void testFull(){
 		AddEdgeController controller = new AddEdgeController(event, gui);
 		event.setCurrentEdges(8);

@@ -15,6 +15,7 @@ public class Line implements Comparable<Line> {
 	int xPosition;
 	String choice;
 	ArrayList<Edge> edges;
+	int index;
 	
 	/**
 	 *This method creates a new Line based upon a horizontal location.
@@ -114,6 +115,22 @@ public class Line implements Comparable<Line> {
 	 */
 	public ArrayList<Edge> getEdges(){
 		return edges;
+	}
+	
+	/**
+	 * This method returns the location of this line in the ArrayList of Lines.
+	 * @return int The index of the line.
+	 */
+	public int getIndex(){
+		return this.index;
+	}
+	
+	/**
+	 * This method sets the know location of this line in the ArrayList.
+	 * @param int The index of this line.
+	 */
+	public void setIndex(int index){
+		this.index = index;
 	}
 	
 	

@@ -64,6 +64,7 @@ public class AddEdgeController implements MouseListener {
 			//gui.getLinesPanel().repaint();
 			//new ResultsController(event);
 			event.calculateResults();
+			gui.getTextDisplay().setText(event.getResults());
 		}
 	}
 
@@ -143,17 +144,19 @@ public class AddEdgeController implements MouseListener {
 				
 				//too far left
 				if (i == 0) {
-					System.out.println("The Edge you are trying to add is outside of the DecisionLines.");
+					//System.out.println("The Edge you are trying to add is outside of the DecisionLines.");
+					gui.getTextDisplay().setText("The Edge you are trying to add is too far to the left of the DecisionLines.");
 					return false;
 				
 					//too close to an edge on the left line
 				} else if (event.getLine(i - 1).checkCloseEdge(mousePosition.y)) {
-					System.out.println("The Edge is too close to another Edge and cannot be added.");
+					//System.out.println("The Edge is too close to another Edge and cannot be added.");
+					gui.getTextDisplay().setText("The Edge you are trying to add is too close to another Edge.");
 					return false;
 					
 					//too close to an edge on the right line
 				} else if (event.getLine(i).checkCloseEdge(mousePosition.y)) {
-					System.out.println("The Edge is too close to another Edge and cannot be added.");
+					gui.getTextDisplay().setText("The Edge you are trying to add is too close to another Edge.");
 					return false;
 					
 				//add the edge
@@ -166,7 +169,8 @@ public class AddEdgeController implements MouseListener {
 					event.getLine(i).addEdge(edge);
 					event.addEdge(edge);
 					event.setCurrentEdges(event.getCurrentEdges() + 1);
-					System.out.println("current edges: " + event.getCurrentEdges() + " total edges: " + event.getTotalEdges());
+					//System.out.println("current edges: " + event.getCurrentEdges() + " total edges: " + event.getTotalEdges());
+					gui.getTextDisplay().setText("current edges: " + event.getCurrentEdges() + " total edges: " + event.getTotalEdges());
 					return true;
 				}
 			}
@@ -174,8 +178,8 @@ public class AddEdgeController implements MouseListener {
 		//too far to the right
 		if (event.getLine(event.getLines().size() - 1).getxPosition() < mousePosition
 				.getX()) {
-			System.out
-					.println("The Edge you are trying to add is outside of the DecisionLines.");
+			//System.out.println("The Edge you are trying to add is outside of the DecisionLines.");
+			gui.getTextDisplay().setText("The Edge you are trying to add is too far to the right of the DecisionLines.");
 			return false;
 		}
 		else return true;
