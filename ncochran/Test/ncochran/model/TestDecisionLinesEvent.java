@@ -2,20 +2,24 @@ package ncochran.model;
 
 import junit.framework.TestCase;
 
+/**
+ * This class is used to test the DecisionLinesEvent.
+ * @author ncochran
+ *
+ */
 public class TestDecisionLinesEvent extends TestCase {
 
 	/**
-	 * checks to see if a string is already a choice.  Tests when there are no existing choices (null choices)
+	 * This class checks to see if a string is already a choice.  
+	 * Tests when there are no existing choices (null choices).
 	 */
-	
-	
 	public void testUnique(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		assertTrue(event.checkUnique("test"));
 	}
 	
 	/**
-	 * tests when you pass it an empty string
+	 * This method tests when you pass it an empty string.
 	 */
 	public void testEmptyUnique(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -23,7 +27,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * test if unique when have stored choices and already have this choice
+	 * This method tests if unique when have stored choices and already have this choice.
 	 */
 	public void testChoice(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -33,7 +37,8 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertFalse(event.checkUnique("test"));
 	}
 	/**
-	 * primarily tests case. also checks that is looking through the whole list
+	 * This method tests letter case. 
+	 * It also checks that the for loop is looking through the whole list.
 	 */
 	public void testCaseChoice(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -44,7 +49,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * test to see if all of the choices are full. they should be
+	 * This method tests to see if all of the choices are full when they should be.
 	 */
 	public void testFull(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -54,7 +59,9 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertTrue(event.checkChoicesFull());
 	}
 	
-	//test to see if all of the edges have been added
+	/**
+	 * This method test to see if all of the edges have been added when they should not have.
+	 */
 	public void testEdgesNotFull(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		event.setNumChoices(3);
@@ -63,7 +70,9 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertFalse(event.checkEdgesFull());
 	}
 	
-	// test get and set current number of edges
+	/**
+	 * This method tests the getter and setter for the current number of edges.
+	 */
 	public void testGetSetCurrentNumEdges(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		event.setNumChoices(3);
@@ -72,7 +81,9 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertEquals(7, event.getCurrentEdges());
 	}
 	
-	// test get and set total number of edges
+	/**
+	 * This method tests the getter and setter for the total number of edges.
+	 */
 	public void testGetSetTotalNumEdges(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		event.setNumChoices(3);
@@ -81,6 +92,9 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertEquals(15, event.getTotalEdges());
 	}
 	
+	/**
+	 * This method tests to see if all of the edges are full when they should be.
+	 */
 	public void testEdgesFull(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		event.setNumChoices(3);
@@ -90,7 +104,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * test to see if the decision is full.  it should not be.  tests when first choice is null
+	 * This method tests to see if the decision is full when it should be.
 	 */
 	public void testFullFirst(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -102,7 +116,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * test to see if the decision is full.  it should not be.  tests when last choice is null
+	 * This method tests to see if the decision is full when it should not be.
 	 */
 	public void testFullLast(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -114,7 +128,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * tests the getter and setter for the number of rounds
+	 * This method tests the getter and setter for the number of rounds.
 	 */
 	public void testGetSetNumRounds(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -123,7 +137,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	}
 	
 	/**
-	 * tests the getter and setter for the number of choices
+	 * This method tests the getter and setter for the number of choices.
 	 */
 	public void testGetSetNumChoices(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -133,7 +147,7 @@ public class TestDecisionLinesEvent extends TestCase {
 	
 	
 	/**
-	 * tests the getter and setter for a line
+	 * This method tests the getter and setter for a line.
 	 */
 	public void testAddtSetLine(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
@@ -145,7 +159,9 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertEquals(50, event.getLine(0).getxPosition());
 	}
 	
-	//test getter and setter for an edge
+	/**
+	 * 	This method tests the getter and setter for an edge.
+	 */
 	public void testGetSetEdge(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		Edge edge = new Edge(54);
@@ -153,10 +169,10 @@ public class TestDecisionLinesEvent extends TestCase {
 		assertEquals(edge,event.getEdge(0));
 	}
 	
-	//THIS IS THE HARD ONE
+/*	//THIS IS THE HARD ONE
 	public void testCalculateResults(){
 		
-	}
+	}*/
 	
 	
 }

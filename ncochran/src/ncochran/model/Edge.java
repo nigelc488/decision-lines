@@ -44,7 +44,7 @@ public class Edge implements Comparable<Edge> {
 
 	/**
 	 * This method sets the height of the Edge.
-	 * @param height in The desired height of the Edge
+	 * @param height int The desired height of the Edge
 	 */
 	public void setHeight(int height) {
 		this.height = height;

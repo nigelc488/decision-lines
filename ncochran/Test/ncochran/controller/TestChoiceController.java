@@ -7,6 +7,11 @@ import ncochran.model.Line;
 import ncochran.view.DecisionLinesGUI;
 import junit.framework.TestCase;
 
+/**
+ * This class is used to test the ChoiceController.
+ * @author Nigel Cochran
+ *
+ */
 public class TestChoiceController extends TestCase {
 	
 	DecisionLinesGUI gui;
@@ -28,6 +33,9 @@ public class TestChoiceController extends TestCase {
 		gui.setVisible(true);
 	}
 	
+	/**
+	 * This method is used to test the constructor.
+	 */
 	public void testChoiceController(){
 		controller = new ChoiceController(event, new Line(36), new JTextField("test"));
 		assertEquals(5, event.getNumChoices());
@@ -35,6 +43,9 @@ public class TestChoiceController extends TestCase {
 		assertEquals("test", controller.text.getText());
 	}
 	
+	/**
+	 * This method is used to test the constructor which takes in an array of text fields.
+	 */
 	public void testChoiceControllerArray(){
 		event.addLine(new Line(11));
 		event.addLine(new Line(22));
@@ -52,12 +63,18 @@ public class TestChoiceController extends TestCase {
 		
 	}
 	
+	/**
+	 * This method is used to test retrieving the text from a text field and setting it to a line.
+	 */
 	public void testRunChoiceController(){
 		controller = new ChoiceController(event, new Line(36), new JTextField("test"));
 		controller.runChoiceController();
 		assertEquals("test", controller.choice);
 	}
 	
+	/**
+	 * This method is used to test that a non-unique choice cannot be added.
+	 */
 	public void testNotRunChoiceController(){
 		event.addLine(new Line("test"));
 		controller = new ChoiceController(event, new Line(36), new JTextField("test"));
@@ -65,6 +82,9 @@ public class TestChoiceController extends TestCase {
 		assertEquals(null, controller.line.getChoice());
 	}
 	
+	/**
+	 * This method is used to test that once all of the choices are valid, it acknowledges that all of choices are full.
+	 */
 	public void testFull(){
 		controller = new ChoiceController(event, gui, 4);
 		gui.getChoice(0).setText("one");

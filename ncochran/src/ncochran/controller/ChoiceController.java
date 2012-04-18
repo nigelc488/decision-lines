@@ -78,18 +78,21 @@ public class ChoiceController implements ActionListener {
 		if(event.checkUnique(choice)){
 			line.setChoice(choice);
 			text.setBackground(Color.green);
+			gui.getTextDisplay().setText("Please enter your choices until all boxes are green.");
 		}
 		else{
 			text.setText(null);
 			text.setBackground(Color.pink);
 			line.setChoice(null);
 			System.out.println("choice is null or the same as another choice");
+			gui.getTextDisplay().setText("The Choice is empty or the same as another Choice. Please try again.");
 		}
 		
 		if(event.checkChoicesFull()){
 			for (int i = 0; i < choices.length; i++) {
 				//choices[i].setEditable(false);
 				gui.getStartButton().setVisible(true);
+				gui.getTextDisplay().setText("Press Start to begin adding Edges.");
 				
 			}
 		}

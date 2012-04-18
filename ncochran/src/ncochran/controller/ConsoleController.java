@@ -18,6 +18,11 @@ public class ConsoleController {
 	int rounds;
 	int choices;
 	
+	/**
+	 * This method creates a ConsoleController using a DecisionLinesEvent.
+	 * @param event DecisionLinesEvent The event this controller will update
+	 */
+	
 	public ConsoleController(DecisionLinesEvent event){
 		this.event = event;
 	}

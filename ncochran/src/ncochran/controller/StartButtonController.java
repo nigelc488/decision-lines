@@ -47,6 +47,7 @@ public class StartButtonController implements ActionListener {
 		gui.fixChoices();
 		gui.getLinesPanel().addMouseListener(new AddEdgeController(event, gui));
 		gui.getStartButton().setVisible(false);
+		gui.getTextDisplay().setText("Click the mouse between two Lines to add an Edge.");
 	}
 	
 	/**
