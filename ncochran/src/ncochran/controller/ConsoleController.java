@@ -17,14 +17,16 @@ public class ConsoleController {
 	boolean run = true;
 	int rounds;
 	int choices;
+	
+	public ConsoleController(DecisionLinesEvent event){
+		this.event = event;
+	}
 
 	/**
 	 * This method reads the number of Choices and number of Rounds from the console and then sets these values for a DecisionLinesEvent.
 	 * @param event DecisionLinesEvent The DecisionLinesEvent that will have its values updated
 	 */
-	public void readConsole(DecisionLinesEvent event) {
-
-		this.event = event;
+	public void readConsole() {
 
 		Scanner sc = new Scanner(System.in);
 		
