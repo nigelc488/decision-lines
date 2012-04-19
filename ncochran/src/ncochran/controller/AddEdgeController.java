@@ -170,7 +170,7 @@ public class AddEdgeController implements MouseListener {
 					event.addEdge(edge);
 					event.setCurrentEdges(event.getCurrentEdges() + 1);
 					//System.out.println("current edges: " + event.getCurrentEdges() + " total edges: " + event.getTotalEdges());
-					gui.getTextDisplay().setText("current edges: " + event.getCurrentEdges() + " total edges: " + event.getTotalEdges());
+					gui.getTextDisplay().setText("Current number of Edges: " + event.getCurrentEdges() + " Total Number of Edges: " + event.getTotalEdges());
 					return true;
 				}
 			}

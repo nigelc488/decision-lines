@@ -107,7 +107,6 @@ public class DecisionLinesEvent {
 	public void sortLines(){
 		Collections.sort(lines);
 		for (int i = 0; i < lines.size(); i++) {
-			lines.get(i).setIndex(i);
 		}
 	}
 	
@@ -158,13 +157,13 @@ public class DecisionLinesEvent {
 				//if it reaches this then it is at the bottom
 				//check if there are no edges
 				if(line.getEdges().size() == 0){
-					results.set(line.getIndex(), lines.get(i).getChoice());
+					results.set(lines.indexOf(line), lines.get(i).getChoice());
 					//System.out.println("Result Added " + lines.get(i).getChoice());
 					run = false;
 				}
 				
 				else if(line.getEdge(line.getEdges().size() - 1).getHeight() <= currentHeight){
-					results.set(line.getIndex(), lines.get(i).getChoice());
+					results.set(lines.indexOf(line), lines.get(i).getChoice());
 					//System.out.println("Result Added " + lines.get(i).getChoice());
 					run = false;
 				}
