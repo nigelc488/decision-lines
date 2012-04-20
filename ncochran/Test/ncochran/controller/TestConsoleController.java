@@ -16,14 +16,11 @@ public class TestConsoleController extends TestCase{
 	public void testReadChoices(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		ConsoleController controller = new ConsoleController(event);
-		controller.choices = 5;
-		controller.readChoices();
+		controller.readChoices(5);
 		assertEquals(5, event.getNumChoices());
-		controller.choices = 2;
-		controller.readChoices();
+		controller.readChoices(2);
 		assertEquals(5, event.getNumChoices());
-		controller.choices = 9;
-		controller.readChoices();
+		controller.readChoices(9);
 		assertEquals(5, event.getNumChoices());
 	}
 	
@@ -33,14 +30,11 @@ public class TestConsoleController extends TestCase{
 	public void testReadRounds(){
 		DecisionLinesEvent event = new DecisionLinesEvent();
 		ConsoleController controller = new ConsoleController(event);
-		controller.rounds = 5;
-		controller.readRounds();
+		controller.readRounds(5);
 		assertEquals(5, event.getNumRounds());
-		controller.rounds = 2;
-		controller.readRounds();
+		controller.readRounds(2);
 		assertEquals(5, event.getNumRounds());
-		controller.rounds = 9;
-		controller.readRounds();
+		controller.readRounds(9);
 		assertEquals(5, event.getNumRounds());
 	}
 	
