@@ -1,0 +1,25 @@
+What we like from each:
+
+Edge:
+Jenine- storing lines as numbers
+Nigel - having a get other edge method
+Nigel - edges are sortable
+
+Line
+Janine - store in an array instead of array list
+Janine - store index instead of position
+
+Event
+Janine - Derive stuff from others instead of making them all separate
+Nigel - check case
+Nigel - check unique in event
+Nigel - calculate results in event
+
+Calculate Results
+janine knows how it works
+
+Choice Controller
+look up some cool looking android stuff
+
+Edge Controller
+Janine - have a button to view results
